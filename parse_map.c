@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:48:09 by bchabot           #+#    #+#             */
-/*   Updated: 2022/05/31 18:32:39 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/01 21:42:21 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_map_height(t_data *data)
 	i = 0;
 	fd = open("map.ber", O_RDONLY);
 	line = get_next_line(fd);
-	data->map_x = ft_strlen(line);
+	data->map_x = ft_strlen(line) - 1;
 	while (line)
 	{
 		free(line);
@@ -46,18 +46,5 @@ void	ft_fill_map(t_data *data)
 	{
 		i++;
 		data->map[i] = get_next_line(fd);
-	}
-}
-
-void	ft_print_map(t_data *data)
-{
-	int	i;
-
-	i = 0;
-	(void)i;
-	while (data->map[i])
-	{
-		ft_putstr(data->map[i]);
-		i++;
 	}
 }
