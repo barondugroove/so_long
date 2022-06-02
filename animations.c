@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   animations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 20:23:50 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/02 17:48:48 by bchabot          ###   ########.fr       */
+/*   Created: 2022/06/02 17:24:52 by bchabot           #+#    #+#             */
+/*   Updated: 2022/06/02 18:07:34 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+#include "so_long.h"
 
-int	main(void)
+int ft_frames(t_data *data)
 {
-	t_data		data;
-
-	data.mlx = mlx_init();
-	ft_fill_walls(&data);
-	ft_fill_floors(&data);
-	ft_fill_map(&data);
-	data.mlx_win = mlx_new_window(data.mlx, (data.map_x + 10) * 32, (data.map_y + 10) * 32, "so_long");
-	mlx_loop_hook(data.mlx, ft_frames, &data);
-	ft_print_map(&data);
-	//mlx_loop_hook(data.mlx, ft_frames, &data);
-	mlx_loop(data.mlx);
+	ft_print_blood(data);
+	usleep(1000000 / 10);
 	return (0);
 }

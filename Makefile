@@ -6,14 +6,15 @@
 #    By: bchabot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/06/01 21:25:55 by bchabot          ###   ########.fr        #
+#    Updated: 2022/06/02 17:31:29 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.c \
 		parse_map.c \
 		get_sprites.c \
-		print_sprites.c
+		print_sprites.c \
+		animations.c
 
 CC = gcc
 

@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:29:34 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/01 21:37:46 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/02 18:40:36 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_sprite(t_data *data, int x, int y, void *sprite)
 {	
-	mlx_put_image_to_window(data->mlx, data->mlx_win, sprite, x * IMG_SIZE, y * IMG_SIZE);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, sprite, (x + 5) * IMG_SIZE, (y + 5) * IMG_SIZE);
 }
 
 void	ft_print_walls(t_data *data, int x, int y)
@@ -23,49 +23,80 @@ void	ft_print_walls(t_data *data, int x, int y)
 	{
 		if (x == 0)
 			ft_print_sprite(data, x, y, data->sprites.coinHG);
-		if (y == data->map_y)
+		else if (x == data->map_x - 1)
 			ft_print_sprite(data, x, y, data->sprites.coinHD);
 		else
 			ft_print_sprite(data, x, y, data->sprites.wallu);
 	}
-	if (y == data->map_y)
+	if (y == data->map_y - 1)
 	{
 		if (x == 0)
 			ft_print_sprite(data, x, y, data->sprites.coinBG);
-		if (y == data->map_y)
+		else if (x == data->map_x - 1)
 			ft_print_sprite(data, x, y, data->sprites.coinBD);
 		else
-			ft_print_sprite(data, x, y, data->sprites.wallb);
+			ft_print_sprite(data, x, y, data->sprites.walld);
 
 	}
-	if (y > 0 && y < data->map_y)
+	if (y > 0 && y < data->map_y - 1)
 	{
 		if (x == 0)
 			ft_print_sprite(data, x, y, data->sprites.wallg);
-		if (x == data->map_y)
-			ft_print_sprite(data, x, y, data->sprites.walld);
+		if (x == data->map_x - 1) 
+			ft_print_sprite(data, x, y, data->sprites.wallr);
 	}
 }
 		
 
 void    ft_print_map(t_data *data)
 {
-    int i;
-    int j;
+    int x;
+    int y;
 
-    i = 0;
-    j = 0;
-    while (i < data->map_y)
+    x = 0;
+    y = 0;
+    while (y < data->map_y)
     {
-        while (j < data->map_x)
+        while (x < data->map_x)
         {
-            if (data->map[j][i] == '1')
-				ft_print_walls(data, j, i);
-            if (data->map[j][i] == '0')
-				ft_print_sprite(data, j, i, data->img_floor);
-            j++;
+            if (data->map[x][y] == '1')
+				ft_print_walls(data, x, y);
+            if (data->map[x][y] == '0')
+				ft_print_sprite(data, x, y, data->sprites.floor);
+            x++;
         }
-        i++;
-        j = 0;
+        y++;
+        x = 0;
     }
+}
+
+void    ft_print_blood(t_data *data)
+{
+	int	x;
+	int	y;
+	static int	i;
+
+	x = 0;
+	y = 0;
+	if (i > BLOOD_FRAMES)
+		i = 0;
+	while (y < data->map_y + 10)
+	{
+		while (x < data->map_x + 10)
+		{
+			if (y < 5 && x < data->map_x + 10)
+				ft_print_sprite(data, x - 5, y - 5, data->sprites.B[i]);
+			if (x < 5 && y < data->map_x + 10)
+				ft_print_sprite(data, x - 5, y - 5, data->sprites.B[i]);
+			if (x > data->map_x + 4)
+				ft_print_sprite(data, x - 5, y - 5, data->sprites.B[i]);
+			if (y > data->map_y + 4) 
+				ft_print_sprite(data, x - 5, y - 5, data->sprites.B[i]);
+
+			x++;
+		}
+		x = 0;
+		y++;
+	}
+	i++;
 }
