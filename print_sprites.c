@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:29:34 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/02 18:40:36 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/03 20:46:21 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,10 @@ void    ft_print_map(t_data *data)
 				ft_print_walls(data, x, y);
             if (data->map[x][y] == '0')
 				ft_print_sprite(data, x, y, data->sprites.floor);
+            if (data->map[x][y] == 'C')
+				ft_print_sprite(data, x, y, data->sprites.C1);
+            if (data->map[x][y] == 'P')
+				ft_print_sprite(data, x, y, data->sprites.P);
             x++;
         }
         y++;
@@ -88,9 +92,9 @@ void    ft_print_blood(t_data *data)
 				ft_print_sprite(data, x - 5, y - 5, data->sprites.B[i]);
 			if (x < 5 && y < data->map_x + 10)
 				ft_print_sprite(data, x - 5, y - 5, data->sprites.B[i]);
-			if (x > data->map_x + 4)
+			if (x > data->map_x + 5)
 				ft_print_sprite(data, x - 5, y - 5, data->sprites.B[i]);
-			if (y > data->map_y + 4) 
+			if (y > data->map_y + 5) 
 				ft_print_sprite(data, x - 5, y - 5, data->sprites.B[i]);
 
 			x++;

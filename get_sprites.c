@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 20:57:15 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/02 18:06:15 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/03 20:42:07 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,13 @@ void	ft_fill_floors(t_data *data)
 	data->sprites.B[11] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/B12.xpm", &img_width, &img_height);
 	data->sprites.B[12] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/B13.xpm", &img_width, &img_height);
 	data->sprites.B[13] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/B14.xpm", &img_width, &img_height);
+}
+
+void ft_fill_collectibles(t_data *data)
+{
+	int	img_width;
+	int	img_height;
+
+	data->sprites.C1 = mlx_xpm_file_to_image(data->mlx, "./IMAGES/C1.xpm", &img_width, &img_height);
+	data->sprites.P = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P1.xpm", &img_width, &img_height);
 }
