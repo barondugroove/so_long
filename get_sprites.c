@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 20:57:15 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/03 20:42:07 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/07 14:53:11 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,27 @@ void ft_fill_collectibles(t_data *data)
 	int	img_height;
 
 	data->sprites.C1 = mlx_xpm_file_to_image(data->mlx, "./IMAGES/C1.xpm", &img_width, &img_height);
-	data->sprites.P = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P1.xpm", &img_width, &img_height);
+	data->sprites.E = mlx_xpm_file_to_image(data->mlx, "./IMAGES/E.xpm", &img_width, &img_height);
+}
+
+void ft_fill_characters(t_data *data)
+{
+	int	img_width;
+	int	img_height;
+
+	data->sprites.P[0] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P1.xpm", &img_width, &img_height);
+	data->sprites.P[1] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P2.xpm", &img_width, &img_height);
+	data->sprites.P[2] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P3.xpm", &img_width, &img_height);
+	data->sprites.P[3] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P4.xpm", &img_width, &img_height);
+	data->sprites.P[4] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P5.xpm", &img_width, &img_height);
+	data->sprites.P[5] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P6.xpm", &img_width, &img_height);
+	data->sprites.P[6] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P7.xpm", &img_width, &img_height);
+	data->sprites.P[7] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P8.xpm", &img_width, &img_height);
+	data->sprites.P[8] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P9.xpm", &img_width, &img_height);
+	data->sprites.P[9] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P10.xpm", &img_width, &img_height);
+	data->sprites.P[10] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P11.xpm", &img_width, &img_height);
+	data->sprites.P[11] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P12.xpm", &img_width, &img_height);
+	data->sprites.P[12] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P13.xpm", &img_width, &img_height);
+	data->sprites.P[13] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P14.xpm", &img_width, &img_height);
+	data->sprites.P[14] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/P15.xpm", &img_width, &img_height);
 }

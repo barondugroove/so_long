@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:13:04 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/03 20:42:36 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/07 17:11:04 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define IMG_SIZE 32 
 # define BLOOD_FRAMES 13 
+# define PLAYER_FRAMES 15 
 
 # include<mlx.h>
 # include<unistd.h>
@@ -33,7 +34,8 @@ typedef struct  s_sprites {
 	void	*wallg;
 	void	*floor;
 	void	*C1;
-	void	*P;
+	void	*P[PLAYER_FRAMES + 1];
+	void	*E;
 	void	*B[BLOOD_FRAMES + 1];
 }	t_sprites;
 
@@ -43,6 +45,9 @@ typedef struct  s_data {
     void    *img_floor;
     void    *img_mur;
     char    **map;
+	int		p_dir;
+	int		p_pos_x;
+	int		p_pos_y;
     int     map_x;
     int     map_y;
 	t_sprites	sprites;
@@ -55,6 +60,7 @@ void	ft_fill_collectibles(t_data *data);
 int		ft_frames(t_data *data);
 void	ft_print_blood(t_data *data);
 void	ft_print_map(t_data *data);
+void	ft_print_player(t_data *data);
 void	ft_print_walls(t_data *data, int x, int y);
 void	ft_print_sprite(t_data *data, int x, int y, void *sprite);
 

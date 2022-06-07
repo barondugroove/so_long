@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:23:50 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/03 19:58:26 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/07 15:02:45 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(void)
 {
 	t_data		data;
 
+	data.p_dir = 8;
 	data.mlx = mlx_init();
 	ft_fill_walls(&data);
 	ft_fill_floors(&data);

@@ -6,7 +6,7 @@
 #    By: bchabot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/06/02 17:31:29 by bchabot          ###   ########.fr        #
+#    Updated: 2022/06/07 17:29:04 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC = gcc
 
 LIBFT = libft/libft.a
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g3
 
 NAME = so_long
 
