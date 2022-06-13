@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:13:04 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/07 17:11:04 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/13 15:38:16 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define IMG_SIZE 32 
 # define BLOOD_FRAMES 13 
-# define PLAYER_FRAMES 15 
+# define PLAYER_FRAMES 14 
 
 # include<mlx.h>
 # include<unistd.h>
@@ -57,6 +57,7 @@ void	ft_fill_map(t_data *data);
 void	ft_fill_walls(t_data *data);
 void	ft_fill_floors(t_data *data);
 void	ft_fill_collectibles(t_data *data);
+void	ft_fill_characters(t_data *data);
 int		ft_frames(t_data *data);
 void	ft_print_blood(t_data *data);
 void	ft_print_map(t_data *data);

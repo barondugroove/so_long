@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:48:09 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/07 18:08:10 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/13 14:56:24 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_map_height(t_data *data)
 	char	*line;
 
 	i = 0;
-	fd = open("map.ber", O_RDONLY);
+	fd = open("map1.ber", O_RDONLY);
 	line = get_next_line(fd);
 	data->map_x = ft_strlen(line) - 1;
 	while (line)
@@ -30,6 +30,7 @@ void	ft_map_height(t_data *data)
 	}
 	data->map_y = i;
 	free(line);
+	close(fd);
 }
 
 void	ft_fill_map(t_data *data)
@@ -38,13 +39,16 @@ void	ft_fill_map(t_data *data)
 	int	fd;
 
 	i = 0;
-	fd = open("map.ber", O_RDONLY);
+	fd = open("map1.ber", O_RDONLY);
 	ft_map_height(data);
 	data->map = malloc(sizeof(char *) * data->map_y + 1);
+	if (!data->map)
+		return ;
 	data->map[i] = get_next_line(fd);
 	while (data->map[i])
 	{
 		i++;
 		data->map[i] = get_next_line(fd);
 	}
+	close(fd);
 }
