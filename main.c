@@ -6,11 +6,17 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:23:50 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/13 15:37:36 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/14 15:59:07 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"so_long.h"
+
+static int	close_hook(t_data *data)
+{
+	close_win(data);
+	return (0);
+}
 
 int	main(void)
 {
@@ -28,6 +34,8 @@ int	main(void)
 	data.mlx_win = mlx_new_window(data.mlx, (data.map_x + 10) * 32, (data.map_y + 10) * 32, "so_long");
 	ft_print_map(&data);
 	mlx_loop_hook(data.mlx, ft_frames, &data);
+	mlx_key_hook(data.mlx_win, ft_inputs, &data);
+	mlx_hook(data.mlx_win, 17, 0, close_hook, &data);
 	mlx_loop(data.mlx);
 	return (0);
 }

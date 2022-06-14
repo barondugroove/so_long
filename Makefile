@@ -6,7 +6,7 @@
 #    By: bchabot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/06/07 17:29:04 by bchabot          ###   ########.fr        #
+#    Updated: 2022/06/14 16:02:44 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ SRCS = main.c \
 		parse_map.c \
 		get_sprites.c \
 		print_sprites.c \
-		animations.c
+		animations.c \
+		clear_window.c \
+		moves.c
 
 CC = gcc
 

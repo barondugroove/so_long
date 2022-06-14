@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:48:09 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/13 14:56:24 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/14 12:17:02 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,10 @@ void	ft_fill_map(t_data *data)
 	data->map = malloc(sizeof(char *) * data->map_y + 1);
 	if (!data->map)
 		return ;
-	data->map[i] = get_next_line(fd);
-	while (data->map[i])
+	while (i < data->map_y)
 	{
-		i++;
 		data->map[i] = get_next_line(fd);
+		i++;
 	}
 	close(fd);
 }

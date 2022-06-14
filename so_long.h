@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:13:04 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/13 15:38:16 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/14 16:41:08 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include<mlx.h>
 # include<unistd.h>
 # include<stdlib.h>
+# include<stddef.h>
 # include<fcntl.h>
 # include "libft/libft.h"
 
@@ -42,8 +43,6 @@ typedef struct  s_sprites {
 typedef struct  s_data {
     void    *mlx;
     void    *mlx_win;
-    void    *img_floor;
-    void    *img_mur;
     char    **map;
 	int		p_dir;
 	int		p_pos_x;
@@ -64,5 +63,8 @@ void	ft_print_map(t_data *data);
 void	ft_print_player(t_data *data);
 void	ft_print_walls(t_data *data, int x, int y);
 void	ft_print_sprite(t_data *data, int x, int y, void *sprite);
+int		close_win(t_data *data);
+int		ft_inputs(int keycode, t_data *data);
+void	ft_player_movements(t_data *data, int p_dir_x, int p_dir_y);
 
 #endif
