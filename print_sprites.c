@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:29:34 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/14 14:51:39 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/20 15:42:02 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,22 @@ void    ft_print_map(t_data *data)
         {
             if (data->map[y][x] == '1')
 				ft_print_walls(data, x, y);
-            if (data->map[y][x] == '0')
+            else if (data->map[y][x] == '0')
 				ft_print_sprite(data, x, y, data->sprites.floor);
-            if (data->map[y][x] == 'C')
-				ft_print_sprite(data, x, y, data->sprites.C1);
-			if (data->map[y][x] == 'E')
+            else if (data->map[y][x] == 'C')
+				ft_print_sprite(data, x, y, data->sprites.C[0]);
+			else if (data->map[y][x] == 'E')
 				ft_print_sprite(data, x, y, data->sprites.E);
-            if (data->map[y][x] == 'P')
+            else if (data->map[y][x] == 'P')
 			{
 				data->p_pos_x = x;
 				data->p_pos_y = y;
             }
+			else if (data->map[y][x] != '\n')
+			{
+				ft_printf("Error\nUnknown item found.");
+				ft_close_error(data);
+			}
 			x++;
         }
         y++;

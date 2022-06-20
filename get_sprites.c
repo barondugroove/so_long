@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 20:57:15 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/13 12:23:17 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/15 20:22:12 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,11 @@ void ft_fill_collectibles(t_data *data)
 	int	img_width;
 	int	img_height;
 
-	data->sprites.C1 = mlx_xpm_file_to_image(data->mlx, "./IMAGES/C1.xpm", &img_width, &img_height);
+	data->sprites.C[0] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/C1.xpm", &img_width, &img_height);
+	data->sprites.C[1] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/C2.xpm", &img_width, &img_height);
+	data->sprites.C[2] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/C3.xpm", &img_width, &img_height);
+	data->sprites.C[3] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/C4.xpm", &img_width, &img_height);
+	data->sprites.C[4] = mlx_xpm_file_to_image(data->mlx, "./IMAGES/C5.xpm", &img_width, &img_height);
 	data->sprites.E = mlx_xpm_file_to_image(data->mlx, "./IMAGES/E.xpm", &img_width, &img_height);
 }
 

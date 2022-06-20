@@ -6,13 +6,13 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:51:25 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/14 15:54:25 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/20 16:36:50 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void ft_free_collectibles(t_data *data)
+void ft_free_character(t_data *data)
 {
 	int i;
 
@@ -21,7 +21,7 @@ void ft_free_collectibles(t_data *data)
 		mlx_destroy_image(data->mlx, data->sprites.P[i++]);
 }
 
-void ft_free_characters(t_data *data)
+void ft_free_blood(t_data *data)
 {
 	int i;
 
@@ -30,12 +30,23 @@ void ft_free_characters(t_data *data)
 		mlx_destroy_image(data->mlx, data->sprites.B[i++]);
 }
 
+void ft_free_collectibles(t_data *data)
+{
+	int i;
+
+	i = 0;
+	while (i <= CHEST_FRAMES)
+		mlx_destroy_image(data->mlx, data->sprites.C[i++]);
+}
+
+
 int close_win(t_data *data)
 {
 	int i;
 
 	i = 0;
-	ft_free_characters(data);
+	ft_free_character(data);
+	ft_free_blood(data);
 	ft_free_collectibles(data);
 	mlx_destroy_image(data->mlx, data->sprites.coinHD);
 	mlx_destroy_image(data->mlx, data->sprites.coinHG);
@@ -47,7 +58,6 @@ int close_win(t_data *data)
 	mlx_destroy_image(data->mlx, data->sprites.wallg);
 	mlx_destroy_image(data->mlx, data->sprites.floor);
 	mlx_destroy_image(data->mlx, data->sprites.E);
-	mlx_destroy_image(data->mlx, data->sprites.C1);
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	mlx_destroy_display(data->mlx);
 	while (i < data->map_y)
