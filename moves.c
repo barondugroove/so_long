@@ -6,23 +6,23 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:52:43 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/20 17:30:06 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/27 15:21:48 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int ft_inputs(int keycode, t_data *data)
+int	ft_inputs(int keycode, t_data *data)
 {
 	if (keycode == 65307)
 		close_win(data);
-	if (keycode == 119)
+	if (keycode == 119 || keycode == 65362) 
 		ft_player_movements(data, 0, -1);
-	if (keycode == 115)
+	if (keycode == 115 || keycode == 65364)
 		ft_player_movements(data, 0, 1);
-	if (keycode == 97)
+	if (keycode == 97 || keycode == 65361)
 		ft_player_movements(data, -1, 0);
-	if (keycode == 100)
+	if (keycode == 100 || keycode == 65363)
 		ft_player_movements(data, 1, 0);
 	return (0);
 }
@@ -40,12 +40,19 @@ void	grab_chest(t_data *data, int y, int x)
 void	ft_player_movements(t_data *data, int p_dir_x, int p_dir_y)
 {
 	static int	moves;
-	char *move;
+	char		*move;
 
 	if (data->map[data->p_pos_y + p_dir_y][data->p_pos_x + p_dir_x] == '1')
 		return ;
 	if (data->map[data->p_pos_y + p_dir_y][data->p_pos_x + p_dir_x] == 'E' && data->c_count != 0)
 		return ;
+	moves++;
+	ft_printf("Moves = %d\n", moves);
+	move = ft_itoa(moves);
+	mlx_string_put(data->mlx, data->mlx_win, 180, 180, 0xffffff, "Moves :");
+	ft_print_sprite(data, 2, 0, data->sprites.wallu);
+	mlx_string_put(data->mlx, data->mlx_win, 225, 180, 0xffffff, move);
+	free(move);
 	if (data->map[data->p_pos_y + p_dir_y][data->p_pos_x + p_dir_x] == 'C')
 	{
 		grab_chest(data, data->p_pos_y + p_dir_y, data->p_pos_x + p_dir_x);
@@ -54,12 +61,6 @@ void	ft_player_movements(t_data *data, int p_dir_x, int p_dir_y)
 	if (data->map[data->p_pos_y + p_dir_y][data->p_pos_x + p_dir_x] == 'E' && data->c_count == 0)
 		close_win(data);
 	ft_print_sprite(data, data->p_pos_x, data->p_pos_y, data->sprites.floor);
-	moves++;
-	move = ft_itoa(moves);
-	mlx_string_put(data->mlx, data->mlx_win, 6 * IMG_SIZE, 6 * IMG_SIZE, 0xffffff, "Moves :");
-	mlx_string_put(data->mlx, data->mlx_win, 8 * IMG_SIZE, 6 * IMG_SIZE, 0xffffff, move);
-	free(move);
-	ft_printf("Moves = %d\n", moves);
 	data->p_pos_x += p_dir_x;
 	data->p_pos_y += p_dir_y;
 }

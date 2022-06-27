@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:23:50 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/20 17:29:18 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/27 18:12:01 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	close_hook(t_data *data)
 	return (0);
 }
 
-int ft_game(char *map)
+int	ft_game(char *map)
 {
 	t_data		data;
 
@@ -35,6 +35,7 @@ int ft_game(char *map)
 	ft_fill_floors(&data);
 	ft_fill_collectibles(&data);
 	ft_fill_characters(&data);
+	ft_fill_enemies(&data);
 	data.mlx_win = mlx_new_window(data.mlx, (data.map_x + 10) * 32, (data.map_y + 10) * 32, "so_long");
 	ft_print_map(&data);
 	mlx_loop_hook(data.mlx, ft_frames, &data);
@@ -44,7 +45,7 @@ int ft_game(char *map)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		ft_game(argv[1]);

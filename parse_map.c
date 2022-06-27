@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:48:09 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/15 11:54:41 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/22 16:02:53 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_map_height(t_data *data)
 {
-	int 	i;
-	int 	fd;
+	int		i;
+	int		fd;
 	char	*line;
 
 	i = 0;

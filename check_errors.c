@@ -6,15 +6,15 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 11:14:46 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/20 16:52:01 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/22 15:42:08 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void ft_close_error(t_data *data)
+void	ft_close_error(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->map_y)
@@ -24,10 +24,10 @@ void ft_close_error(t_data *data)
 	exit(0);
 }
 
-void ft_check_map_path(t_data *data)
+void	ft_check_map_path(t_data *data)
 {
-	int i;
-	char *ext;
+	int		i;
+	char	*ext;
 
 	i = 1;
 	ext = ".ber";
@@ -43,7 +43,7 @@ void ft_check_map_path(t_data *data)
 	}
 }
 
-void ft_check_errors(t_data *data)
+void	ft_check_errors(t_data *data)
 {
 	if (ft_check_rectangle(data))
 	{

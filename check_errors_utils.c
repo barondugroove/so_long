@@ -6,16 +6,16 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 16:05:15 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/20 16:29:23 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/23 16:56:28 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int ft_check_rectangle(t_data *data)
+int	ft_check_rectangle(t_data *data)
 {
-	int i;
-	size_t len;
+	int		i;
+	size_t	len;
 
 	i = 1;
 	len = ft_strlen(data->map[0]);
@@ -28,29 +28,23 @@ int ft_check_rectangle(t_data *data)
 	return (0);
 }
 
-int ft_check_borders(t_data *data)
+int	ft_check_borders(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->map_x)
 	{
 		if (data->map[0][i] != '1')
-		{
-			ft_printf("LOL");
 			return (1);
-		}
 		if (data->map[data->map_y - 1][i] != '1')
-		{
-			ft_printf("CAC");
 			return (1);
-		}
 		i++;
 	}
 	i = 0;
 	while (i < data->map_y)
 	{
-		if (data->map[i][0]!= '1')
+		if (data->map[i][0] != '1')
 			return (1);
 		if (data->map[i][data->map_x - 1] != '1')
 			return (1);
@@ -59,13 +53,12 @@ int ft_check_borders(t_data *data)
 	return (0);
 }
 
-int ft_check_assets(t_data *data)
+int	ft_check_assets(t_data *data)
 {
-	int p;
-	int e;
-	int i;
-	int j;
-
+	int	p;
+	int	e;
+	int	i;
+	int	j;
 
 	p = 0;
 	e = 0;
