@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 11:14:46 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/22 15:42:08 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/28 16:32:00 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_check_map_path(t_data *data)
 		if (data->map_path[ft_strlen(data->map_path) - i] != ext[4 - i])
 		{
 			ft_printf("Error\nThe map file extension is wrong.\n");
-			ft_close_error(data);
+			exit(0);
 		}
 		else
 			i++;

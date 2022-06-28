@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 20:57:15 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/27 18:05:29 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/28 12:42:22 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_fill_enemies(t_data *data)
 {
 	int	img_width;
 	int	img_height;
-	
+
 	data->sprites.D[0] = mlx_xpm_file_to_image(data->mlx, \
 	"./IMAGES/D0.xpm", &img_width, &img_height);
 	data->sprites.D[1] = mlx_xpm_file_to_image(data->mlx, \

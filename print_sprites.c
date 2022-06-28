@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:29:34 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/27 18:06:08 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/28 12:28:57 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ void	ft_print_map(t_data *data)
 				data->p_pos_x = x;
 				data->p_pos_y = y;
 			}
-			/*else if (data->map[y][x] != '\n')
+			else if (data->map[y][x] != '\n' && data->map[y][x] != 'D')
 			{
-				ft_printf("Error\nUnknown item found.");
+				ft_printf("Error\nUnknown item found.\n");
 				ft_close_error(data);
-			}*/
+			}
 			x++;
 		}
 		y++;

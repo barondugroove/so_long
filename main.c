@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:23:50 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/27 18:12:01 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/28 16:42:18 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	ft_game(char *map)
 	ft_fill_collectibles(&data);
 	ft_fill_characters(&data);
 	ft_fill_enemies(&data);
-	data.mlx_win = mlx_new_window(data.mlx, (data.map_x + 10) * 32, (data.map_y + 10) * 32, "so_long");
+	data.mlx_win = mlx_new_window(data.mlx, (data.map_x + 10) * 32, \
+	(data.map_y + 10) * 32, "so_long");
 	ft_print_map(&data);
 	mlx_loop_hook(data.mlx, ft_frames, &data);
 	mlx_key_hook(data.mlx_win, ft_inputs, &data);
@@ -50,7 +51,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		ft_game(argv[1]);
 	else if (argc == 1)
-		ft_printf("Error\nThe map argument seems to be missing, please try again.");
+		ft_printf("Error\nThe map argument seems to be missing, try again.");
 	else if (argc > 2)
 		ft_printf("Error\nToo many map arguments, please try again.");
 	return (0);
