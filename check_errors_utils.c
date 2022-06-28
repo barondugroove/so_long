@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 16:05:15 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/23 16:56:28 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/28 19:57:47 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ int	ft_check_borders(t_data *data)
 	return (0);
 }
 
+int	ft_check_items(t_data *data, int p, int e)
+{
+	if (p == 0 || p > 1 || data->c_count == 0 || e == 0)
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_check_assets(t_data *data)
 {
 	int	p;
@@ -62,11 +70,11 @@ int	ft_check_assets(t_data *data)
 
 	p = 0;
 	e = 0;
-	i = 0;
-	j = 0;
-	while (i < data->map_y)
+	i = -1;
+	j = -1;
+	while (++i < data->map_y)
 	{
-		while (j < data->map_x)
+		while (++j < data->map_x)
 		{
 			if (data->map[i][j] == 'P')
 				p++;
@@ -74,13 +82,8 @@ int	ft_check_assets(t_data *data)
 				data->c_count++;
 			if (data->map[i][j] == 'E')
 				e++;
-			j++;
 		}
-		i++;
-		j = 0;
+		j = -1;
 	}
-	if (p == 0 || p > 1 || data->c_count == 0 || e == 0)
-		return (1);
-	else
-		return (0);
+	return (ft_check_items(data, p, e));
 }

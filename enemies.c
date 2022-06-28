@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:25:08 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/28 16:33:10 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/28 20:26:43 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ void	enemy_position(t_data *data)
 	int					dir[2];
 	static int			i;
 
-	pos[0] = 0;
-	pos[1] = 0;
-	while (pos[1] < data->map_y)
+	pos[0] = -1;
+	pos[1] = -1;
+	while (++pos[1] < data->map_y)
 	{
-		while (pos[0] < data->map_x)
+		while (++pos[0] < data->map_x)
 		{
 			if (data->map[pos[1]][pos[0]] == 'D')
 			{
@@ -61,9 +61,7 @@ void	enemy_position(t_data *data)
 					i = 0;
 				}
 			}
-			pos[0]++;
 		}
-		pos[1]++;
-		pos[0] = 0;
+		pos[0] = -1;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:23:50 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/28 16:42:18 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/28 20:23:17 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,7 @@ int	ft_game(char *map)
 	ft_fill_map(&data);
 	ft_check_errors(&data);
 	data.mlx = mlx_init();
-	ft_fill_walls(&data);
-	ft_fill_floors(&data);
-	ft_fill_collectibles(&data);
-	ft_fill_characters(&data);
-	ft_fill_enemies(&data);
+	ft_create_assets(&data);
 	data.mlx_win = mlx_new_window(data.mlx, (data.map_x + 10) * 32, \
 	(data.map_y + 10) * 32, "so_long");
 	ft_print_map(&data);
