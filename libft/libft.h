@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:42:41 by bchabot           #+#    #+#             */
-/*   Updated: 2022/05/31 18:14:37 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/29 12:08:44 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,13 @@ char	*ft_strjoin_gnl(char *s1, char *s2);
 int		ft_strlcat_gnl(char *dst, char *src, size_t size);
 int		ft_strlcpy_gnl(char *dst, char *src, size_t size);
 /*** ft_printf ***/
-int ft_printf(const char *s, ...);
-int ft_find_params(char s, va_list params);
-int	ft_putchar(char c);
-int	ft_putnbr(int n);
-int	ft_putptr(unsigned long long ptr);
-int ft_putnbr_base(unsigned long long n, char *base);
-int ft_putnbr_u(unsigned int n);
-int	ft_putstr(char *s);
-
-
+int		ft_printf(const char *s, ...);
+int		ft_find_params(char s, va_list params);
+int		ft_putchar(char c);
+int		ft_putnbr(int n);
+int		ft_putptr(unsigned long long ptr);
+int		ft_putnbr_base(unsigned long long n, char *base);
+int		ft_putnbr_u(unsigned int n);
+int		ft_putstr(char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:12:20 by bchabot           #+#    #+#             */
-/*   Updated: 2022/05/31 12:30:38 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/29 12:09:39 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,15 @@ char	*get_next_line(int fd)
 	if (!save)
 	{
 		save = malloc(sizeof(char));
-		if(!save)
+		if (!save)
 			return (NULL);
 		*save = 0;
 	}
 	str = ft_strjoin_gnl(str, save);
 	free(save);
 	str = ft_read(str, fd);
-	save = ft_substr_gnl(str, ft_has_n(str, 0), ft_strlen(str) - ft_has_n(str, 0));
+	save = ft_substr_gnl(str, ft_has_n(str, 0), \
+	ft_strlen(str) - ft_has_n(str, 0));
 	line = ft_substr_gnl(str, 0, ft_has_n(str, 0));
 	free(str);
 	return (line);
