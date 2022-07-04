@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 20:13:04 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/30 13:17:44 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/30 16:25:17 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	close_win(t_data *data);
 int		ft_inputs(int keycode, t_data *data);
 void	ft_player_collision(t_data *data, int p_dir_x, int p_dir_y);
 void	ft_move_player(t_data *data, int p_dir_x, int p_dir_y);
-void	ft_print_move_counter(t_data *data, int moves);
 void	ft_check_map_path(t_data *data);
 void	ft_check_errors(t_data *data);
 int		ft_check_rectangle(t_data *data);

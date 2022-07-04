@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:52:43 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/30 12:41:54 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/30 16:20:35 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	grab_chest(t_data *data, int y, int x)
 	int	i;
 
 	i = 0;
-	while (i++ < CHEST_FRAMES * 5000 || usleep(25000))
+	while (i++ < CHEST_FRAMES * 5000)
 		ft_print_sprite(data, x, y, data->sprites.c[i / 5000]);
 	data->c_count--;
 }

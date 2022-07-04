@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 16:05:15 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/30 13:17:20 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/30 15:33:42 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,16 @@ int	ft_check_assets(t_data *d)
 	p = 0;
 	e = 0;
 	i[0] = -1;
+	i[1] = -1;
 	while (++i[0] < d->map_y)
 	{
 		while (++i[1] < d->map_x)
 		{
 			if (d->map[i[0]][i[1]] == 'P')
 				p++;
-			if (d->map[i[0]][i[1]] == 'C')
+			else if (d->map[i[0]][i[1]] == 'C')
 				d->c_count++;
-			if (d->map[i[0]][i[1]] == 'E')
+			else if (d->map[i[0]][i[1]] == 'E')
 				e++;
 			else if (d->map[i[0]][i[1]] != '0' && d->map[i[0]][i[1]] != '1')
 				ft_error_items(d);

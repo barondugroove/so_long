@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:52:43 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/30 12:45:04 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/06/30 16:24:56 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,6 @@ int	ft_inputs(int keycode, t_data *data)
 	if (keycode == 100 || keycode == 65363)
 		ft_player_collision(data, 1, 0);
 	return (0);
-}
-
-void	ft_print_move_counter(t_data *data, int moves)
-{
-	char		*move;
-
-	ft_printf("Moves = %d\n", moves);
-	move = ft_itoa(moves);
-	mlx_string_put(data->mlx, data->mlx_win, 10, 10, 0xffffff, "Moves :");
-	ft_print_sprite(data, 1, 0, data->sprites.wallu);
-	mlx_string_put(data->mlx, data->mlx_win, 45, 10, 0xffffff, move);
-	free(move);
 }
 
 void	ft_move_player(t_data *data, int p_dir_x, int p_dir_y)
@@ -60,7 +48,7 @@ void	ft_player_collision(t_data *data, int p_dir_x, int p_dir_y)
 	&& data->c_count != 0)
 		return ;
 	moves++;
-	ft_print_move_counter(data, moves);
+	ft_printf("Moves = %d\n", moves);
 	if (data->map[data->p_pos_y + p_dir_y][data->p_pos_x + p_dir_x] == 'C')
 	{
 		data->c_count--;
