@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:48:09 by bchabot           #+#    #+#             */
-/*   Updated: 2022/06/30 12:19:34 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/07/04 13:29:56 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	ft_map_height(t_data *data)
 	line = get_next_line(fd);
 	if (!line)
 	{
-		ft_printf("Error\nMap file is empty or does not exist, \
-		please try again.");
+		ft_printf("Error\nMap file is empty or does not exist, try again.");
 		exit(0);
 	}
 	data->map_x = ft_strlen(line) - 1;
